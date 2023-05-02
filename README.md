@@ -31,7 +31,8 @@ RSS compatible XML (hackernews sample):
       <comments>https://news.ycombinator.com/item?id=35792188</comments>
       <guid isPermaLink="false">https://news.ycombinator.com/item?id=35792188</guid>
     </item>
- ...
+  </channel>
+</rss>
 ```
 
 ### Expected Ouptput
@@ -80,8 +81,9 @@ JSON equivalent:
       "link": "https://www.logicmatters.net/categories/",
       "pub_date": "Tue, 02 May 2023 18:35:27 +0000",
       "title": "Smith's notes on Category Theory I updated"
-    },
-...
+    }
+  ]
+}
 ```
 
 ### SMDK Compatible

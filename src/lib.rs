@@ -1,9 +1,12 @@
 
-use fluvio_smartmodule::dataplane::smartmodule::{SmartModuleExtraParams};
-use fluvio_smartmodule::{smartmodule, Result, Record, RecordData};
-use rss::Channel;
 use serde_json::json;
 use serde_json::value::Value;
+use rss::Channel;
+
+use fluvio_smartmodule::dataplane::smartmodule::SmartModuleExtraParams;
+use fluvio_smartmodule::{
+    smartmodule, Result, Record, RecordData
+};
 
 /// Recursively remove keys with following values:
 ///  - null, {}, []
