@@ -5,7 +5,7 @@ use rss::Channel;
 
 use fluvio_smartmodule::dataplane::smartmodule::SmartModuleExtraParams;
 use fluvio_smartmodule::{
-    smartmodule, Result, Record, RecordData
+    smartmodule, Result, SmartModuleRecord, RecordData
 };
 
 /// Recursively remove keys with following values:
@@ -39,7 +39,7 @@ fn remove_empty_keys(value: &mut Value) {
 }
 
 #[smartmodule(map)]
-pub fn map(record: &Record) -> Result<(Option<RecordData>, RecordData)> {
+pub fn map(record: &SmartModuleRecord) -> Result<(Option<RecordData>, RecordData)> {
     let key = record.key.clone();
 
     let channel = Channel::read_from(record.value.as_ref()).unwrap();
